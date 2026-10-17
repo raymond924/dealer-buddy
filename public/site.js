@@ -151,7 +151,7 @@
         e.preventDefault();
         var btn = $('button[type=submit]', form); btn.disabled = true;
         fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
-          .then(function (r) { if (!r.ok) throw new Error(r.status); form.innerHTML = '<div class="sent" role="status"><h2>Thank you.</h2><p>We\'ve received your message and will be in touch within one working day.</p></div>'; })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); form.innerHTML = '<div class="sent" role="status"><h2>Thank you.</h2><p>We\'ve received your message and will be in touch.</p></div>'; })
           .catch(function () { btn.disabled = false; form.submit(); });
       }
     });
